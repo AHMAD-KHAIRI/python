@@ -11,4 +11,4 @@
 # 1st input() will get the user to type in the console
 # 2nd len() will check and return the no of strings in the input()
 # 3rd print() will print out the no of strings in the console
-print(len(input("What is your name? ")))
+# print(len(input("What is your name? ")))
