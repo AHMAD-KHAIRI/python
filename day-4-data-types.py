@@ -32,5 +32,5 @@ print(Pi)
 # Boolean - they are either True or False and must start with uppercase
 
 True
-# true
 False
+# true or false is not considered as Boolean and will generate a NameError
