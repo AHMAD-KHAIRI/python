@@ -25,7 +25,7 @@ print(123_456_789)  # 123,456,789
 
 
 # Floating Point Number (Float)
-Pi = 3.14159
+Pi = 3.14159    # Numbers which has the decimal point is considered as floating numbers and not as integers
 print(Pi)
 
 
