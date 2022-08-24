@@ -37,3 +37,10 @@ second_digit = int(two_digit_number[1])
 # print(type(first_digit))
 # print(type(second_digit))
 print(first_digit + second_digit)
+
+# solution from udemy trainer:
+first_Digit = two_digit_number[0]
+second_Digit = two_digit_number[1]
+
+result = int(first_Digit) + int(second_Digit)
+print(result)
