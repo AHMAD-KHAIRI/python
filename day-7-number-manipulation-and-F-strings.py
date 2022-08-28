@@ -84,3 +84,29 @@ print(days_remaining, weeks_remaining, months_remaining)
 # print results and save in a variable
 message = f"You have {days_remaining} days, {weeks_remaining} weeks, and {months_remaining} months left."
 print(message)
+
+
+# Quiz 4: Mathematical Operations Quiz
+
+# Question 1: What is the output?
+print(6 + 4 / 2 - (1 * 2))
+# first brackets: 1 * 2 = 2
+# second division: 4 / 2 = 2
+# third addition: 6 + 2 = 8
+# fourth subtraction: 8 - 2 = 6 --> Output/Result
+
+# Question 2: What is the data type of the variable a?
+a = int("5") / int(2.7)
+print(type(a))
+# output: float
+# Reason: any numbers which uses a division, will get the result in float data type
+# By using floor division //, we will get int data type
+
+x = int("5")
+y = int(2.7)
+z = x / y
+z1 = x // y
+print(z, type(z), z1, type(z1))
+
+# Question 3: Which will produce a TypeError
+# Solution: D --> We cannot concatenate strings with int data type, hence need to convert to str first OR use f-strings
