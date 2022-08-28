@@ -46,3 +46,41 @@ print("Your score is " + str(score))
 
 # To make it even easier/convenient, we can use F Strings and call up variables inside the curly braces {}
 print(f"Your score is {score}, height is {height} and you are winning is {isWinning}")
+
+
+# Coding Challenge: Exercise 3 - Life in Weeks
+
+# Create a program using maths and f-Strings that tells us # how many days, 
+# weeks, months we have left if we live until 90 years old
+
+# 🚨 Don't change the code below 👇
+age = input("What is your current age?")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+# 1 year = 365 days, 1 year = 52 weeks, 1 year = 12 months
+# Desired output: You have x days, y weeks, and z months left.
+
+# total_days_to_live = (90 - int(age)) * 365
+# total_weeks_to_live = (90 - int(age)) * 52
+# total_months_to_live = (90 - int(age)) * 12
+# print(f"You have {total_days_to_live} days, {total_weeks_to_live} weeks, and {total_months_to_live} months left.")
+
+
+# Solution from udemy:
+
+# first convert age into int data type
+age_as_int = int(age)
+
+# second calculate the mathematics
+years_remaining = 90 - age_as_int
+days_remaining = years_remaining * 365
+weeks_remaining = years_remaining * 52
+months_remaining = years_remaining * 12
+
+# check if answer is correct
+print(days_remaining, weeks_remaining, months_remaining)
+
+# print results and save in a variable
+message = f"You have {days_remaining} days, {weeks_remaining} weeks, and {months_remaining} months left."
+print(message)
