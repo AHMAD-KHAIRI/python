@@ -45,4 +45,43 @@ states_of_america.extend(["Imanland", "Hypersonic"])
 print(states_of_america)
 
 
+# Exercise 2 - Banker Roulette
+
+# Important: You are not allowed to use the choice() function.
+
+import random
+
+# 🚨 Don't change the code below 👇
+test_seed = int(input("Create a seed number: "))
+random.seed(test_seed)
+
+# Split string method
+names_string = input("Give me everybody's names, separated by a comma. ")
+names = names_string.split(", ")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+# num_of_items = len(names)
+# random_choice = random.randint(0, num_of_items - 1)
+# person_to_pay = names[random_choice]
+# print(f"{person_to_pay} is going to buy the meal today!")
+
+# Udemy trainer solution:
+# Get the total number in the list using len()
+num_items = len(names)
+
+# Get the random number from the list using random.randint
+random_choice = random.randint(0, num_items - 1)
+# print(random_choice)
+
+# Use the random number to generate the random index number
+person_who_will_pay = names[random_choice]
+
+# Print the output to console
+print(person_who_will_pay + " is going to buy the meal today!")
+
+# Alternatively, we can use the function choice()
+# random_names = random.choice(names)
+# print(names, random_names)
+# print(f"{random_names} is going to buy the meal today!")
 
