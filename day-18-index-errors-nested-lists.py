@@ -97,3 +97,75 @@ map[column][row] = 'X'
 # 🚨 Don't change the code below 👇
 print(f"{row1}\n{row2}\n{row3}")
 
+
+# 47. Day 4 Project: Rock, Paper, Scissors
+import random
+
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+#Write your code below this line 👇
+human = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
+choices = [rock, paper, scissors]
+print(choices[human])
+num_of_choices = len(choices)
+random_number = random.randint(0, num_of_choices - 1)
+computer = choices[random_number]
+print(f"Computer chose: {computer}")
+
+if human == 0: 
+    if random_number == 0:
+        print("It's a draw.")
+    elif random_number == 1:
+        print("You lose")
+    else:
+        print("You win.")
+elif human == 1:
+    if random_number == 0:
+        print("You win.")
+    elif random_number == 1:
+        print("It's a draw.")
+    else:
+        print("You lose")
+else:
+    if random_number == 0:
+        print("You lose")
+    elif random_number == 1:
+        print("You win.")
+    else:
+        print("It's a draw.")
+
+
+# -------------------------------------------------------------------------------------
+# Udemy trainer solution:
+# user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
+# computer_choice = random.randint(0, 2)
+# print(f"Computer chose: {computer_choice}")
+
+
+# -------------------------------------------------------------------------------------
