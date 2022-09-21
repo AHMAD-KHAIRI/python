@@ -84,17 +84,16 @@ print(total2)
 
 #Write your code below this row 👇
 
-numbers = 0
-
-for number in range(1, 16):
+for number in range(1, 101):
     if number % 3 == 0:
-        numbers = "Fizz"
-        print(numbers)
         if number % 5 == 0:
-            print(f"{numbers}Buzz")
-    # elif number % 5 == 0:
-    #     print("Buzz")
-    #     if number % 3 == 0:
-    #         print(f"{numberFizz" + number)
+            print("FizzBuzz")
+        else:
+            print("Fizz")
+    elif number % 5 == 0:
+        if number % 3 == 0:
+            print("FizzBuzz")
+        else:
+            print("Buzz")
     else:
         print(number)
