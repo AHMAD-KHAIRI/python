@@ -18,6 +18,7 @@ text_to_list = list(text)
 def encrypt(plain_text, shift_amount):
     cipher_text = ""
     for letter in plain_text:
+        # find the letter using index() method. The index() method finds the first occurrence of the specified value
         position = alphabet.index(letter)
         new_position = position + shift_amount
         new_letter = alphabet[new_position]
@@ -36,3 +37,14 @@ def encrypt(plain_text, shift_amount):
 
 #TODO-3: Call the encrypt function and pass in the user inputs. You should be able to test the code and encrypt a message. 
 encrypt(plain_text=text, shift_amount=shift)
+
+# How to compare between two strings and find the position
+test_string = "abcdefghijklmnopqrstuvwxyz"
+msg = input("Type something: ").lower()
+
+def find_alphabet_in(message):
+    for letter in message:
+        position = test_string.index(letter)
+        print(position)
+
+find_alphabet_in(message=msg)
