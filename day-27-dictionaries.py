@@ -1,4 +1,4 @@
-# Python dictionaries
+# 91. The Python dictionary: Deep Dive
 # Coded on 24.10.2022
 # Dictionary in python is similar to dictionary in real life
 # For example if we want to find the definition of a word in the dictionary
@@ -41,7 +41,7 @@ for key in programming_dictionary:
     print(key)
     print(programming_dictionary[key])
 
-
+# 92. Interactive Coding Exercise
 # Day 9 / Exercise 1 - Grading Program
 student_scores = {
   "Harry": 81,
@@ -87,3 +87,101 @@ for student in student_scores:
 
 # 🚨 Don't change the code below 👇
 print(student_grades)
+
+# 93. Nesting Lists and Dictionaries
+
+# A dictionary looks like this: {Key: Value} where each Key contains one Value
+capitals = {
+    "France": "Paris",
+    "Germany": "Berlin",
+}
+
+# A dictionary with a nested list and dictionary looks like this:
+# {
+# Key: Value1,
+# Key2: [List],
+# Key3: {Dict},
+# }
+
+# Nesting a list in a Dictionary:
+travel_log = {
+    "France": ["Paris", "Nice", "Monaco"],
+    "Germany": ["Berlin", "Frankfurt", "Munich", "Stuttgart", "Wurzburg", "Ulm"],
+}
+
+# Nesting a list in a list is not quite useful compared to a nested dictionary:
+# ["A", "B", ["C", "D"]]
+
+# Nesting a Dictionary in a Dictionary
+travel_log = {
+    "France": {
+        "cities_visited": [
+            "Paris", 
+            "Nice", 
+            "Monaco"], 
+        "total_visits": 12
+        },
+    "Germany": {
+        "cities_visited": [
+            "Berlin", 
+            "Frankfurt", 
+            "Munich", 
+            "Stuttgart", 
+            "Wurzburg", 
+            "Ulm"],
+        "total_visits": 24
+    },
+}
+
+# Nesting a Dictionary in a List
+# [{
+#     Key: [List],
+#     Key2: {Dict},
+# },
+# {
+#     Key: Value,
+#     Key2: Value,
+# }]
+travel_log = [
+    {
+        "country": "France",
+        "cities_visited": ["Paris", "Nice", "Monaco"], 
+        "total_visits": 12
+    },
+    {
+        "country": "Germany",
+        "cities_visited": ["Berlin", "Frankfurt", "Munich", "Stuttgart", "Wurzburg", "Ulm"],
+        "total_visits": 24
+    },
+]
+
+# Exercise 2 - Dictionary in List
+travel_log = [
+{
+  "country": "France",
+  "visits": 12,
+  "cities": ["Paris", "Lille", "Dijon"]
+},
+{
+  "country": "Germany",
+  "visits": 5,
+  "cities": ["Berlin", "Hamburg", "Stuttgart"]
+},
+]
+#🚨 Do NOT change the code above
+
+#TODO: Write the function that will allow new countries
+#to be added to the travel_log. 👇
+def add_new_country(country_visited, num_of_visits, cities_visited):
+    # first create an empty dictionary
+    new_country = {}
+    # secondly, assign the key with the function parameters
+    new_country["country"] = country_visited
+    new_country["visits"] = num_of_visits
+    new_country["cities"] = cities_visited
+    # finally, to add an item to an existing list, we can use append()
+    travel_log.append(new_country)
+
+#🚨 Do not change the code below
+add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
+print(travel_log)
