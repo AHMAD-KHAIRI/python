@@ -33,12 +33,12 @@ def check_answer(guess, a_followers, b_followers):
     else:
         return guess == "b"
 
+from os import system
 
 # Display art
 from day34HigherLowerArt import logo, vs
 print(logo)
 
-# Generate a random account from the game
 from day34HigherLowerGameData import data
 import random
 
@@ -47,12 +47,20 @@ score = 0
 
 # Make the game repeatable
 game_should_continue = True
-while game_should_continue:
 
-    account_a = random.choice(data)
+# generate random account at the start of the game
+account_b = random.choice(data)
+
+while game_should_continue:
+    # Making account at position B become the next account at position A
+    
+    # Generate a random account from the game
+    account_a = account_b
     account_b = random.choice(data)
     # # Check data from account_a and account_b is the same. If yes, regenerate
-    if account_a == account_b:
+    # if account_a == account_b:
+    # changed from if statement to while loop to keep checking until there are no longer equal
+    while account_a == account_b:
         account_b = random.choice(data)
 
     # Format the account data into printable format (moved to function format_data)
@@ -73,6 +81,12 @@ while game_should_continue:
     b_follower_count = account_b["follower_count"]
     # # Use if statement to check if user is correct (use function check_answer)
     is_correct = check_answer(guess, a_follower_count, b_follower_count)
+    
+    # Clear the screen between rounds
+    system('cls')
+
+    # Print logo after clear the screen
+    print(logo)
 
     # # Give user feedback on their guess
     if is_correct:
@@ -84,6 +98,3 @@ while game_should_continue:
         print(f"Sorry, that's wrong. Final score: {score}.")
 
 
-    # Making account at position B become the next account at position A
-
-    # Clear the screen between rounds
