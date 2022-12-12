@@ -8,8 +8,11 @@ question_bank = []
 # Second, loop through each of the questions inside question_data using a for loop
 for question in question_data:
     # Third, for each question, create a variable to hold the data inside question_data
-    question_text = question["text"]
-    question_answer = question["answer"]
+    # question_text = question["text"]
+    # question_answer = question["answer"]
+    # format according to new question_data from opentdb
+    question_text = question["question"]
+    question_answer = question["correct_answer"]
     # Task 2: Create a new_question object from our Question class and link the data inside question_data
     # new_question = Question(inputs)
     new_question = Question(question_text, question_answer)
@@ -25,9 +28,10 @@ for question in question_data:
 
 # initialize QuizBrain 
 quiz = QuizBrain(question_bank)
-quiz.next_question()
 
+# Create a while loop to keep asking next_question if the question_bank still_has_questions
+while quiz.still_has_questions():
+    quiz.next_question()
 
-
-
-    
+print("You've completed the quiz.")
+print(f"Your final score was: {quiz.score}/{quiz.question_number}")
