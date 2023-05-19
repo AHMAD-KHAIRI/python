@@ -24,11 +24,11 @@ tim.pensize(15)
 # random number generator
 # random_integer = random.randint(1, 100)
 
-for _ in range(200):
-    # tim.pensize(random_integer)
-    tim.color(random.choice(colors))
-    tim.forward(30)
-    tim.setheading(random.choice(directions))
+# for _ in range(200):
+#     # tim.pensize(random_integer)
+#     tim.color(random.choice(colors))
+#     tim.forward(30)
+#     tim.setheading(random.choice(directions))
 
 # fourth part: increase the speed
 tim.speed("fastest")
