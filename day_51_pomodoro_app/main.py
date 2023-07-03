@@ -48,7 +48,7 @@ def countdown(count):
         start_timer()
         # add the check mark sign every work reps completed
         marks = ""
-        work_sessions = math.floor(reps/2)
+        work_sessions = math.floor(REPS/2)
         for _ in range(work_sessions):
             marks += "✓"
             checkmark_label.config(text=marks)
