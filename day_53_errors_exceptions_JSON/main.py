@@ -30,7 +30,7 @@ try:
     value = a_dictionary["non_existent_key"]
 
 # except:
-# except code block cannot be bare because it will not catch other types of error
+# except code block cannot be bare (aka broadscope) because it will not catch other types of error
     # print("there was an error")
     # file = open("a_file.txt", "w")
 except FileNotFoundError:
