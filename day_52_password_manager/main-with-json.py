@@ -103,6 +103,24 @@ def generate_password():
 
     pyperclip.copy(password)
 
+# FIND PASSWORD MECHANISM (with exception handling)
+def find_password():
+    website = website_input.get()
+    try:
+        with open("data.json") as data_file:
+            data = json.load(data_file)
+    # catch exception when no data.json file exists
+    except FileNotFoundError:
+            messagebox.showinfo(title="Error", message="No data file is found.")
+    else:
+        if website in data:
+            email = data[website]["email"]
+            password = data[website]["password"]
+            messagebox.showinfo(title=website, message=f"Email: {email}\nPassword: {password}")
+        else:
+            messagebox.showinfo(title="Error", message=f"No details for {website} exists.")
+
+
 
 # ----- UI SETUP -----
 window = Tk()
@@ -122,16 +140,19 @@ password_label = Label(text="Password:")
 # create the buttons
 generate_button = Button(text="Generate Password", command=generate_password)
 add_button = Button(text="Add", width=43, command=save_data)
+# added Search button for challenge 2
+search_button = Button(text="Search", width=15, command=find_password)
 
 # create the input entry fields
-website_input = Entry(width=50)
+website_input = Entry(width=32)
 email_or_username_input = Entry(width=50)
 password_input = Entry(width=32)
 
 # position the widgets
 canvas.grid(row=0, column=1)
 website_label.grid(row=1, column=0)
-website_input.grid(row=1, column=1, columnspan=2)
+website_input.grid(row=1, column=1)
+search_button.grid(row=1, column=2)
 email_or_username_label.grid(row=2, column=0)
 email_or_username_input.grid(row=2, column=1, columnspan=2)
 password_label.grid(row=3, column=0)
