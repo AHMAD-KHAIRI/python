@@ -11,6 +11,8 @@ today_tuple = (today.month, today.day)
 
 # 2. Import birthdays.csv as dataframe
 data = pandas.read_csv("birthdays.csv")
+# below is for pythonanywhere:
+# data = pandas.read_csv("./automated_birthday_wisher/birthdays.csv")
 
 # 3. Create a dictionary from birthdays.csv that is formatted like this:
 # birthdays_dict = {
@@ -25,6 +27,8 @@ if today_tuple in birthdays_dict:
     birthday_name = birthdays_dict[today_tuple]
     # 5. If there is a match, pick a random letter from letter templates folder
     file_path = f"./letter_templates/letter_{random.randint(1,3)}.txt"
+    # below is for pythonanywhere:
+    # file_path = f"./automated_birthday_wisher/letter_templates/letter_{random.randint(1,3)}.txt"
     with open(file_path) as letter_file:
         contents = letter_file.read()
         # replace the placeholder with the birthday name
