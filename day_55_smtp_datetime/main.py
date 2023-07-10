@@ -6,25 +6,25 @@ my_email = "ak.test.smtp.python@gmail.com"
 my_app_password = "mghdwtncpaiajeeb"
 recipient_email = "khairihamzah85@gmail.com"
 
-now = dt.datetime.now()
-weekday = now.weekday()
-print(weekday)
+# now = dt.datetime.now()
+# weekday = now.weekday()
+# print(weekday)
 
-# if it is Monday
-if weekday == 0:
-    with open("quotes.txt") as quote_file:
-        all_quotes = quote_file.readlines()
-        quote = random.choice(all_quotes)
+# # if it is Monday
+# if weekday == 0:
+with open("quotes.txt") as quote_file:
+    all_quotes = quote_file.readlines()
+    quote = random.choice(all_quotes)
 
-    print(quote)
-    with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
-        connection.starttls()
-        connection.login(user=my_email, password=my_app_password)
-        connection.sendmail(
-            from_addr= my_email, 
-            to_addrs=my_email, 
-            msg=f"Subject: Monday Motivation\n\n{quote}\nThis email is sent using Python SMTP"
-            )
+# print(quote)
+with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
+    connection.starttls()
+    connection.login(user=my_email, password=my_app_password)
+    connection.sendmail(
+        from_addr= my_email, 
+        to_addrs=recipient_email, 
+        msg=f"Subject: Monday Motivation\n\n{quote}\nThis email is sent using Python SMTP"
+        )
 
 
 '''
