@@ -1,0 +1,8 @@
+# Ignore files related to API keys, passwords, etc
+*.env
+
+# Ignore content of json file containing passwords
+*.json
+
+# Ignore content of text file containing passwords
+*.txt

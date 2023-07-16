@@ -2,12 +2,13 @@ from tkinter import *
 import requests, random, html, json
 
 def get_quote():
-    # canvas.itemconfig(quote_text, text=quote)
-    pass
+    # source: https://www.invajy.com/steve-jobs-quotes/
+    with open("quotes.json", mode="r", encoding="utf8") as quotes_file:
+        quotes_data = json.load(quotes_file)
+        quote = random.choice(quotes_data["quotes"])
+        quote_list = list(quote.values())
+    canvas.itemconfig(quote_text, text=quote)
 
-with open("quotes.json", mode="r", encoding="utf8") as data_file:
-    data = json.load(data_file)
-    # print(quote)
 
 window = Tk()
 window.title("Steve Jobs says...")
