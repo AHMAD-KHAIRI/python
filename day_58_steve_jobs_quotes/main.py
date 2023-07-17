@@ -6,8 +6,8 @@ def get_quote():
     with open("quotes.json", mode="r", encoding="utf8") as quotes_file:
         quotes_data = json.load(quotes_file)
         quote = random.choice(quotes_data["quotes"])
-        quote_list = list(quote.values())
-    canvas.itemconfig(quote_text, text=quote)
+        quote_list = [value for (key, value) in quote.items()]
+        canvas.itemconfig(quote_text, text=f"{quote_list[0]}")
 
 
 window = Tk()
