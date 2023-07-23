@@ -1,0 +1,37 @@
+html {
+  background: lightblue;
+}
+
+/* element selector */
+h2 {
+  color: purple;
+}
+
+/* class selector "." */
+.red-text {
+  color: red;
+}
+
+.list {
+  font-size: 20px;
+}
+
+/* id selector "#" */
+#main {
+  color: green;
+}
+
+/* attribute selector "element[attribute]" */
+a[draggable="true"] {
+  color: pink;
+}
+
+li[value="2"] {
+  color: orange;
+}
+
+/* universal selector "*" */
+* {
+  color: blue;
+  text-align: justify;
+}
