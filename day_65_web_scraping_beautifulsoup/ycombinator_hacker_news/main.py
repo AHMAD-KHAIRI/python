@@ -43,12 +43,12 @@ article_upvotes = soup.find_all(name="span", class_="score")
 # convert the for loop to list comprehension: new_list = [new_item for item in list if test]
 article_scores = [int(score.getText().split(" ")[0]) for score in article_upvotes]
 
+# print(article_titles)
+# print(article_links)
+# print(article_scores)
+
 highest_score = max(article_scores)
 index_with_the_highest_score = article_scores.index(highest_score)
 print(article_titles[index_with_the_highest_score])
 print(article_links[index_with_the_highest_score])
 print(highest_score)
-
-# print(article_titles)
-# print(article_links)
-# print(article_scores)
