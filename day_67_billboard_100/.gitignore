@@ -1,0 +1,4 @@
+# Ignore files related to API keys, passwords, etc
+*.env
+*.cache
+__pycache__/
