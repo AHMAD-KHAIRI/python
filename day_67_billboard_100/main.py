@@ -9,7 +9,7 @@ date_today = today.strftime("%Y/%m/%d")
 # prompt = input("Which year do you want to travel to? Type the data in this format YYYY-MM-DD: ")
 
 
-URL="https://www.billboard.com/charts/hot-100/2000-08-12"
+URL="https://www.billboard.com/charts/hot-100/2000-08-12"  
 
 response = requests.get(URL)
 website = response.text

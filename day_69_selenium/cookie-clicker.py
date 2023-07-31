@@ -2,10 +2,22 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 import time
 
 URL = "http://orteil.dashnet.org/experiments/cookie/"
+
+def click_cookie_for_five_seconds():
+    clicker = True
+    start_time = time.time() + 5
+    while clicker:
+        cookie.click()
+        if (start_time - time.time()) < 0:
+            clicker = False
+
+def buy_upgrade():
+    items = driver.find_elements(By.CSS_SELECTOR, "#store > div:not(.grayed)")
+    items[-1].click()
+
 
 # Location of chromedriver:
 chrome_driver_path = r"C:\Users\ahmad\Development\chromedriver.exe"
@@ -20,17 +32,13 @@ driver.maximize_window() #This is just for maximize the window.
 
 driver.get(URL)
 
-# find the cookie
 cookie = driver.find_element(by=By.ID, value="cookie")
 
-time_now = time.time()
-print(time_now)
-# timeout = 10 # in seconds
+end = time.time() + 300 # ends after 5 minutes
+while time.time() < end:
+    click_cookie_for_five_seconds()
+    buy_upgrade()
 
-# while time_now < time_now + timeout:
-    # click on the cookie
-    # cookie.click()    
-
-# find the money (cookies)
-# money = driver.find_element(by=By.ID, value="money")
-# print(money.text)
+time.sleep(2)
+score = float(driver.find_element(By.ID, "cps").text.split(" : ")[1])
+print(f"Your score is {score} cookies/second.")
