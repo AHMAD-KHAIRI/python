@@ -8,7 +8,7 @@ import scipy.stats as st # for statistical calculations
 
 from scipy.stats import norm # normal distribution
 
-# expected values
+# expected values (=mu)
 mu1 = 0
 mu2 = -1
 mu3 = 2
