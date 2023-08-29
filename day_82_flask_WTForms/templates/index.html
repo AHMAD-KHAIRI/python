@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Secrets</title>
-    {% include 'bootstrap.html' %}
-  </head>
-  <body>
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Welcome</h1>
-        <p>Are you ready to discover my secret?</p>
-        <a class="btn btn-primary btn-lg" href=" {{ url_for('login') }} "
-          >Login</a
-        >
-      </div>
-    </div>
-  </body>
-</html>
+{% extends "base.html" %} <br />
+{% block title %}Secrets{% endblock %} <br />
+{% block content %}
+<div class="jumbotron">
+  <div class="container">
+    <h1>Welcome</h1>
+    <p>Are you ready to discover my secret?</p>
+    <a class="btn btn-primary btn-lg" href=" {{ url_for('login') }} ">Login</a>
+  </div>
+</div>
+{% endblock %}
