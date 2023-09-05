@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+<!--Don't forget your import here-->
+{% from 'bootstrap5/form.html' import render_form %} <br />
+{% block title %}Edit Rating{% endblock %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+      <h1>Edit Book Rating</h1>
+      <p>Book Title: {{ book.title }}</p>
+      <p>Current Rating: {{ book.rating }}</p>
+      <div class="form">
+        <!-- This is where your WTForm will go -->
+        {{ render_form(form, novalidate=True) }}
+      </div>
+    </div>
+    <p class="space-above">
+      <a href="{{ url_for('home') }}">See all books</a>
+    </p>
+  </div>
+</div>
+{% endblock %}
