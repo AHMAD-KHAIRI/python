@@ -1,0 +1,152 @@
+/* Reset default padding and margin for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: white; /* Background color for the body */
+  color: #333; /* Default text color */
+}
+
+header {
+  background-color: #fff; /* White background for the header */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  padding: 10px 0; /* Add some padding to the top and bottom */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Add some padding to the sides */
+}
+
+.navbar-brand img {
+  max-width: 120px; /* Adjust the max-width of the logo */
+}
+
+.navbar-toggler-icon {
+  border: 1px solid #333; /* Style the navbar-toggler-icon */
+}
+
+.navbar-nav {
+  list-style: none;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+/* Adjust styles for the container */
+.container {
+  padding-top: 20px;
+}
+
+/* Style form headings */
+.h2,
+h2 {
+  font-size: 32px;
+  font-weight: 900;
+  /* color: #002b49; */
+}
+h3 {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Style form elements */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-weight: bold;
+  display: block; /* This makes labels block-level elements */
+  margin-bottom: 5px; /* Add some spacing below labels */
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style radio and checkbox labels */
+.form-check-label {
+  font-weight: normal;
+  margin-left: 10px;
+}
+
+/* Style the submit button */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  /* color: #fff; */
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Additional styling for the container */
+.container p {
+  margin-bottom: 15px; /* Add spacing between paragraphs */
+}
+
+/* Improved styles for the image and text */
+.col-md-6 img {
+  max-width: 100%;
+  height: auto;
+}
+
+.col-auto h1.h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #333; /* Set a text color for headings */
+}
+
+.col-auto h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333; /* Set a text color for headings */
+}
+
+/* Adjust styles for links within the content */
+.content a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  display: block;
+  background-color: #0d2b49;
+  color: #ffffff;
+  padding: 15px;
+}

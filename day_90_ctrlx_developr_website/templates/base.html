@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block styles %}
+    <!-- Add Bootstrap 4 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./static/css/styles.css" />
+    <link rel="icon" href="./static/images/favicon.ico" />
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="{{ url_for('home') }}">
+            <img
+              src="./static/images/logo.png"
+              alt="bosch rexroth logo"
+              class="img-fluid"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link {{ 'active' if request.endpoint == 'home' }}"
+                  href="{{ url_for('home') }}"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link {{ 'active' if request.endpoint == 'registration' }}"
+                  href="{{ url_for('registration') }}"
+                  >Register</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link {{ 'active' if request.endpoint == 'faqs' }}"
+                  href="{{ url_for('faqs') }}"
+                  >FAQs</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link {{ 'active' if request.endpoint == 'contact' }}"
+                  href="{{ url_for('contact') }}"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    {% block content %}{% endblock %} <br />
+    <div class="container footer">
+      <div class="row">
+        <div class="col-xs-12">
+          <p>
+            <a class="text-bold">© Bosch Rexroth AG, 2023</a>
+            <a
+              href="?x=6f41b6abc821e03c95e45abac92cbe69aae69f03&amp;l=en&amp;_route=public%2Fimprint"
+              target="_blank"
+              class="margin-left-15"
+              >Imprint</a
+            >
+            <a
+              href="?x=6f41b6abc821e03c95e45abac92cbe69aae69f03&amp;l=en&amp;_route=public%2Fprivacy"
+              target="_blank"
+              >Data Protection Notice</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    {% block scripts %}
+    <!-- Add Bootstrap 4 JavaScript (optional) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    {% endblock %}
+  </body>
+</html>
