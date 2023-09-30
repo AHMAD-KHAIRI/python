@@ -13,9 +13,30 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = "some secret string"
 Bootstrap5(app)
 
+# configure the SQLite database, relative to the app instance folder
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///registrations.db"
+# create the extension
+db = SQLAlchemy()
+# initialize the app with the extension
+db.init_app(app)
+
+class Registration(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    group_member_one = db.Column(db.String(250), nullable=False)
+    group_member_two = db.Column(db.String(250), nullable=False)
+    group_member_three = db.Column(db.String(250), nullable=False)
+    sector_categories
+    occupation = db.Column(db.String(250), nullable=False)
+    education = db.Column(db.String(250), nullable=False)
+    handphone
+    email = db.Column(db.String(250), nullable=False)
+    interest_categories
+
+# Create the database tables
+with app.app_context():
+    db.create_all()
 
 class BootstrapListWidget(widgets.ListWidget):
-     
     def __call__(self, field, **kwargs):
         kwargs.setdefault("id", field.id)
         html = [f"<{self.html_tag} {widgets.html_params(**kwargs)}>"]
@@ -69,10 +90,7 @@ def registration():
     registration_form = RegistrationForm()
 
     if registration_form.validate_on_submit():
-        # Check if "professional" was selected in sector_categories
-        if 'professional' in registration_form.sector_categories.data:
-            registration_form.occupation.render_kw = {}
-
+        
         print("Registration is successful!")
     return render_template("register.html", form=registration_form)
 

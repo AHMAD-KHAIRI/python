@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block title %}Registration - ctrlX developR
 challenge{% endblock %} {% block content %}
 <div class="container mt-5">
-  <h2 class="mb-4">Register for the ctrlX developR Challenge</h2>
+  <h2 class="mb-4">Register for the ctrlX developR Challenge Malaysia</h2>
   <form method="POST" novalidate>
     {{ form.hidden_tag() }} {# Include CSRF token #}
 
@@ -9,29 +9,26 @@ challenge{% endblock %} {% block content %}
     <div class="mb-4">
       <h3>Group Members</h3>
       <div class="mb-3">
-        <label for="group_member_one" class="form-label">1st Member:</label>
-        {{ form.group_member_one(class="form-control", placeholder="Enter your
-        name") }} {% for error in form.group_member_one.errors %}
+        <label for="group_member_one" class="col-form-label">1st Member:</label>
+        {{ form.group_member_one(class="form-control", placeholder="Name") }} {%
+        for error in form.group_member_one.errors %}
         <span class="text-danger">{{ error }}</span>
         {% endfor %}
       </div>
 
       <div class="mb-3">
-        <label for="group_member_two" class="form-label">2nd Member:</label>
-        {{ form.group_member_two(class="form-control", placeholder="Enter your
-        name") }}
+        <label for="group_member_two" class="col-form-label">2nd Member:</label>
+        {{ form.group_member_two(class="form-control", placeholder="Name") }}
       </div>
 
       <div class="mb-3">
         <label for="group_member_three" class="form-label">3rd Member:</label>
-        {{ form.group_member_three(class="form-control", placeholder="Enter your
-        name") }}
+        {{ form.group_member_three(class="form-control", placeholder="Name") }}
       </div>
 
       <div class="mb-3">
         <label for="group_member_four" class="form-label">4th Member:</label>
-        {{ form.group_member_four(class="form-control", placeholder="Enter your
-        name") }}
+        {{ form.group_member_four(class="form-control", placeholder="Name") }}
       </div>
     </div>
 
@@ -58,16 +55,16 @@ challenge{% endblock %} {% block content %}
     <!-- Occupation, Education, Mobile, and Email Section -->
     <div class="mb-3">
       <label for="occupation" class="form-label">Occupation:</label>
-      {{ form.occupation(class="form-control", placeholder="Enter your
-      professional details. e.g. Automation Engineer/ Manager") }}
+      {{ form.occupation(class="form-control", placeholder="e.g. Automation
+      Engineer/ Manager") }}
     </div>
 
     <div class="mb-4">
       <div class="mb-3">
         <label for="education" class="form-label">Education Background:</label>
-        {{ form.education(class="form-control", placeholder="Enter your
-        education background. Example: Diploma/Degree in Mechatronics
-        Engineering") }} {% for error in form.education.errors %}
+        {{ form.education(class="form-control", placeholder="e.g. Diploma/Degree
+        in Mechatronics Engineering") }} {% for error in form.education.errors
+        %}
         <span class="text-danger">{{ error }}</span>
         {% endfor %}
       </div>
@@ -75,16 +72,16 @@ challenge{% endblock %} {% block content %}
       <h3>Contact Information</h3>
       <div class="mb-3">
         <label for="handphone" class="form-label">Mobile Number:</label>
-        {{ form.handphone(class="form-control", placeholder="Enter your mobile
-        number") }} {% for error in form.handphone.errors %}
+        {{ form.handphone(class="form-control", placeholder="Mobile number") }}
+        {% for error in form.handphone.errors %}
         <span class="text-danger">{{ error }}</span>
         {% endfor %}
       </div>
 
       <div class="mb-3">
         <label for="email" class="form-label">Email Address:</label>
-        {{ form.email(class="form-control", placeholder="Enter your email
-        address") }} {% for error in form.email.errors %}
+        {{ form.email(class="form-control", placeholder="Email address") }} {%
+        for error in form.email.errors %}
         <span class="text-danger">{{ error }}</span>
         {% endfor %}
       </div>

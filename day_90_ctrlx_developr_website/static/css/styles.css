@@ -55,6 +55,11 @@ header {
   padding-top: 20px;
 }
 
+h1 {
+  font-weight: 700; /* Bold */
+  font-size: 2rem; /* Adjust font size as needed */
+}
+
 /* Style form headings */
 .h2,
 h2 {
@@ -66,6 +71,33 @@ h3 {
   font-size: 20px;
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  /* Fallback fonts in case Montserrat fails to load */
+  /* Include similar font styles here */
+}
+
+/* Body text */
+body {
+  font-family: "Roboto", sans-serif;
+  /* Fallback fonts in case Roboto fails to load */
+  /* Include similar font styles here */
+}
+
+/* Adjust maximum width and line height for <p> elements */
+p {
+  max-width: 600px; /* Adjust the width as needed */
+  /*margin: 0 auto; /* Center-align paragraphs */
+  line-height: 1.6; /* Adjust line height for better readability */
+  font-size: 18px; /* Adjust font size as needed */
 }
 
 /* Style form elements */
@@ -98,11 +130,22 @@ h3 {
   background-color: #007bff;
   border: none;
   padding: 10px 20px;
-  font-size: 18px;
+  font-size: 30px;
   border-radius: 5px;
   cursor: pointer;
   color: #fff;
-  /* color: #fff; */
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+form .btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
   transition: background-color 0.3s;
   width: 100%;
 }
