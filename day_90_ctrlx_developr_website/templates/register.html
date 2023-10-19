@@ -72,7 +72,7 @@ challenge{% endblock %} {% block content %}
       <h3>Contact Information</h3>
       <div class="mb-3">
         <label for="handphone" class="form-label">Mobile Number:</label>
-        {{ form.handphone(class="form-control", placeholder="Mobile number") }}
+        {{ form.handphone(class="form-control", placeholder="Mobile Number") }}
         {% for error in form.handphone.errors %}
         <span class="text-danger">{{ error }}</span>
         {% endfor %}
@@ -82,6 +82,14 @@ challenge{% endblock %} {% block content %}
         <label for="email" class="form-label">Email Address:</label>
         {{ form.email(class="form-control", placeholder="Email address") }} {%
         for error in form.email.errors %}
+        <span class="text-danger">{{ error }}</span>
+        {% endfor %}
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        {{ form.password(class="form-control", placeholder="Password") }} {% for
+        error in form.password.errors %}
         <span class="text-danger">{{ error }}</span>
         {% endfor %}
       </div>

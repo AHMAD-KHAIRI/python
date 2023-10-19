@@ -14,7 +14,7 @@ body {
 header {
   background-color: #fff; /* White background for the header */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  padding: 10px 0; /* Add some padding to the top and bottom */
+  padding: 5px; /* Add some padding to the top and bottom */
 }
 
 .navbar {
@@ -24,9 +24,10 @@ header {
   padding: 0 20px; /* Add some padding to the sides */
 }
 
-.navbar-brand img {
-  max-width: 120px; /* Adjust the max-width of the logo */
-}
+/* Adjust the max-width of the logo */
+/* .navbar-brand img {
+  max-width: 1000px;
+} */
 
 .navbar-toggler-icon {
   border: 1px solid #333; /* Style the navbar-toggler-icon */
@@ -65,13 +66,13 @@ h1 {
 h2 {
   font-size: 32px;
   font-weight: 900;
-  /* color: #002b49; */
 }
-h3 {
+
+/* h3 {
   font-size: 20px;
   margin-top: 20px;
   margin-bottom: 10px;
-}
+} */
 
 /* Headings */
 h1,
@@ -79,17 +80,16 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   font-family: "Montserrat", sans-serif;
   /* Fallback fonts in case Montserrat fails to load */
-  /* Include similar font styles here */
+  color: white;
 }
 
 /* Body text */
 body {
   font-family: "Roboto", sans-serif;
-  /* Fallback fonts in case Roboto fails to load */
-  /* Include similar font styles here */
 }
 
 /* Adjust maximum width and line height for <p> elements */
@@ -187,9 +187,13 @@ form .btn-primary {
   text-decoration: underline;
 }
 
-footer {
+.footer {
   display: block;
-  background-color: #0d2b49;
-  color: #ffffff;
-  padding: 15px;
+  /* background-color: white; */
+  /* color: #ffffff; */
+  padding: 10px;
+}
+
+.sidebar a {
+  color: white;
 }
