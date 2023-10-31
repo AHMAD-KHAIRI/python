@@ -22,11 +22,14 @@
       height: 900px;
     "
   >
-    <header>
+    <main>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <!-- Navbar content -->
         <div class="container">
-          <a class="navbar-brand" href="#">
+          <a
+            class="navbar-brand mt-2 px-2"
+            href="https://www.boschrexroth.com/en/my/"
+          >
             <img
               src="https://apps.boschrexroth.com/microsites/ctrlx-automation/files/ctrlx/Logos-Favicons-Icons%20%28do%20not%20delete%2C%20or%20you%20are%20get%20killed%20%3B-%29%29/Header-Logos_ctrlX_Rexroth/rexroth_Logo_web_small.gif"
               alt="bosch rexroth logo"
@@ -57,7 +60,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="h5 navbar-nav ms-auto">
               <li class="nav-item">
                 <a
                   class="nav-link {{ 'active' if request.endpoint == 'home' }}"
@@ -81,9 +84,10 @@
                 >
               </li>
               {% else: %}
+              <!-- class="nav-link {{ 'active' if request.endpoint == 'challenges' }}" -->
               <li class="nav-item">
                 <a
-                  class="nav-link {{ 'active' if request.endpoint == 'challenges' }}"
+                  class="nav-link {{ 'active' if request.endpoint in ['challenges', 'plc_challenge', 'opcua_challenge', 'nodered_challenge', 'motion_challenge', 'webiq_challenge', 'ide_challenge'] }}"
                   href="{{ url_for('challenges') }}"
                   >Challenges</a
                 >
@@ -92,10 +96,10 @@
                 <a
                   class="nav-link {{ 'active' if request.endpoint == 'scores' }}"
                   href="{{ url_for('scores') }}"
-                  >Scoreboard</a
+                  >Scores</a
                 >
               </li>
-              <li class="nav-item">
+              <li class="nav-item" id="logout">
                 <a
                   class="nav-link {{ 'active' if request.endpoint == 'logout' }}"
                   href="{{ url_for('logout') }}"
@@ -114,28 +118,46 @@
                 <a
                   class="nav-link {{ 'active' if request.endpoint == 'faqs' }}"
                   href="{{ url_for('faqs') }}"
-                  >FAQs</a
+                  >FAQ</a
+                >
+              </li>
+              <!-- Only show if user id is 1 (admin user) -->
+              {% if current_user.id == 1: %}
+              <li class="nav-item">
+                <a
+                  class="nav-link {{ 'active' if request.endpoint == 'podium' }}"
+                  href="{{ url_for('podium') }}"
+                  >Podium</a
                 >
               </li>
               <li class="nav-item">
+                <a
+                  class="nav-link {{ 'active' if request.endpoint == 'dashboard' }}"
+                  href="{{ url_for('dashboard') }}"
+                  >Dashboard</a
+                >
+              </li>
+              {% endif %}
+              <!-- <li class="nav-item">
                 <a
                   class="nav-link {{ 'active' if request.endpoint == 'contact' }}"
                   href="{{ url_for('contact') }}"
                   >Contact</a
                 >
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
       </nav>
-    </header>
+    </main>
     {% block content %}{% endblock %}
-    <div class="container footer">
+    <div class="container footer mt-4">
       <div class="row">
-        <div class="col-12">
-          <p>
-            <a class="text-bold">© Bosch Rexroth AG, 2023</a>
-            <a
+        <div class="col-auto">
+          <p class="h6">
+            <span>©</span>
+            Bosch Rexroth Sdn. Bhd., 2023, all rights reserved
+            <!-- <a
               href="?x=6f41b6abc821e03c95e45abac92cbe69aae69f03&amp;l=en&amp;_route=public%2Fimprint"
               target="_blank"
               class="margin-left-15"
@@ -145,7 +167,7 @@
               href="?x=6f41b6abc821e03c95e45abac92cbe69aae69f03&amp;l=en&amp;_route=public%2Fprivacy"
               target="_blank"
               >Data Protection Notice</a
-            >
+            > -->
           </p>
         </div>
       </div>

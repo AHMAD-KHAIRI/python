@@ -13,28 +13,32 @@
     </div>
   </div>
 </div>
-<div class="container mt-4">
+<div class="container">
   <div class="row">
     <div class="col-auto">
-      <h2>Push Your Idea Two Steps Ahead</h2>
+      <h1><strong>Push Your Idea Two Steps Ahead</strong></h1>
       <h4>
-        <strong>Be part of it and register now for the 2024 <br /></strong
-        ><strong>ctrlX developR challenge - Malaysia Edition!<br /></strong>
+        Be part of it and register now for the 2023 <br />
+        mini-ctrlX developR challenge - Malaysia Edition!<br />
       </h4>
     </div>
   </div>
 </div>
-<div class="container mt-4">
+{% if not current_user.is_authenticated: %}
+<div class="container" id="register">
   <div class="row">
-    <div class="col-auto my-auto">
-      <a class="btn btn-danger btn-lg" href="{{ url_for('registration') }}"
-        >Join Now!</a
-      >
-    </div>
+    <a class="col-6 btn btn-info btn-lg" href="{{ url_for('registration') }}"
+      ><strong>Register Your Team!</strong></a
+    >
   </div>
 </div>
-<div class="container mt-4">
-  <div class="content-after row">
+{% else: %}
+<div class="container">
+  <div class="row"></div>
+</div>
+{% endif %}
+<div class="container">
+  <div class="row">
     <div class="col-xl-8 col-lg-8 col-md-6">
       <p>
         After the debut of the first ctrlX developR challenge in 2022, it is
@@ -47,14 +51,9 @@
         has been missing so far.
         <br />
         <br />
-        It was the perfect opportunity to bring together the biggest talents
-        with the most versatile, open, and powerful system available on the
-        market. As a result, ideas evolved into solutions and solutions into
-        projects.
-        <br />
-        <br />
-        Now, it's your turn to transform your ideas into reality!
-        <strong>We Move, You Win!</strong>
+        Now, you can experience first hand all the benefits of ctrlX with the
+        mini-ctrlX developR challenge!
+        <!-- Now, it's your turn to transform your ideas into reality! -->
       </p>
     </div>
   </div>

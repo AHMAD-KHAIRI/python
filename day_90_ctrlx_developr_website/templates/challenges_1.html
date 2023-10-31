@@ -1,0 +1,204 @@
+{% extends 'base.html' %} {% block title %}Challenges - ctrlX developR
+Challenge{% endblock %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-auto">
+      <!-- Include the sidebar -->
+      {% include 'sidebar.html' %}
+    </div>
+    <div class="col-auto">
+      <h1 class="title pb-2 border-bottom">ctrlX developR Challenges</h1>
+      <!-- Challenges Section -->
+      <!-- Challenge 1: PLC App -->
+      <div class="challenge plc" id="plc">
+        <h2>1. PLC App Challenge</h2>
+        <p>Complete the tasks for the PLC App challenge:</p>
+        <!-- Download the exercise PDF Button -->
+        <a
+          href="{{ url_for('download', challenge='PLC') }}"
+          download="PLC_Challenge_1.pdf"
+          >Download exercise 1</a
+        >
+        <a
+          href="{{ url_for('download', challenge='PLC') }}"
+          download="PLC_Challenge_2.pdf"
+          >Download exercise 2</a
+        >
+        <a
+          href="{{ url_for('download', challenge='PLC') }}"
+          download="PLC_Challenge_3.pdf"
+          >Download exercise 3</a
+        >
+        <br /><br />
+        <!-- "Complete" Button -->
+        <div class="mb-3">
+          <form method="post" action="{{ url_for('complete_task_plc') }}">
+            <button type="submit" class="btn btn-info btn-block btn-large">
+              Task Completed
+            </button>
+          </form>
+        </div>
+      </div>
+      <br /><br />
+
+      <!-- Challenge 2: OPC UA App -->
+      <div class="challenge opcua" id="opcua">
+        <h2>2. OPC UA App Challenge</h2>
+        <p>Complete the tasks for the OPC UA App challenge:</p>
+        <!-- Download the exercise PDF Button -->
+        <a
+          href="{{ url_for('download', challenge='OPCUA') }}"
+          download="OPCUA_Challenge_1.pdf"
+          >Download exercise 1</a
+        >
+        <a
+          href="{{ url_for('download', challenge='OPCUA') }}"
+          download="OPCUA_Challenge_2.pdf"
+          >Download exercise 2</a
+        >
+        <a
+          href="{{ url_for('download', challenge='OPCUA') }}"
+          download="OPCUA_Challenge_3.pdf"
+          >Download exercise 3</a
+        >
+        <br /><br />
+        <!-- "Complete" Button -->
+        <div class="mb-3">
+          <form method="post" action="{{ url_for('complete_task_opcua') }}">
+            <button type="submit" class="btn btn-info btn-block btn-large">
+              Task Completed
+            </button>
+          </form>
+        </div>
+      </div>
+      <br /><br />
+
+      <!-- Challenge 3: Node-RED App -->
+      <div class="challenge nodered" id="nodered">
+        <h2>3. Node-RED App Challenge</h2>
+        <p>Complete the tasks for the Node-RED App challenge:</p>
+        <!-- Download the exercise PDF Button -->
+        <a
+          href="{{ url_for('download', challenge='NODERED') }}"
+          download="NODERED_Challenge_1.pdf"
+          >Download exercise 1</a
+        >
+        <a
+          href="{{ url_for('download', challenge='NODERED') }}"
+          download="NODERED_Challenge_2.pdf"
+          >Download exercise 2
+        </a>
+        <a
+          href="{{ url_for('download', challenge='NODERED') }}"
+          download="NODERED_Challenge_3.pdf"
+          >Download exercise 3</a
+        >
+        <br /><br />
+
+        <!-- "Complete" Button -->
+        <div class="mb-3">
+          <form method="post" action="{{ url_for('complete_task_nodered') }}">
+            <button type="submit" class="btn btn-info btn-block btn-large">
+              Task Completed
+            </button>
+          </form>
+        </div>
+      </div>
+      <br /><br />
+
+      <!-- Challenge 4: Motion App -->
+      <div class="challenge motion" id="motion">
+        <h2>4. Motion App Challenge</h2>
+        <p>Complete the tasks for the Motion App challenge:</p>
+        <!-- Download the exercise PDF Button -->
+        <a
+          href="{{ url_for('download', challenge='MOTION') }}"
+          download="MOTION_Challenge_1.pdf"
+          >Download exercise 1</a
+        >
+        <a
+          href="{{ url_for('download', challenge='MOTION') }}"
+          download="MOTION_Challenge_2.pdf"
+          >Download exercise 2
+        </a>
+        <a
+          href="{{ url_for('download', challenge='MOTION') }}"
+          download="MOTION_Challenge_3.pdf"
+          >Download exercise 3</a
+        ><br /><br />
+        <!-- "Complete" Button -->
+        <div class="mb-3">
+          <form method="post" action="{{ url_for('complete_task_motion') }}">
+            <button type="submit" class="btn btn-info btn-block btn-large">
+              Task Completed
+            </button>
+          </form>
+        </div>
+      </div>
+      <br /><br />
+
+      <!-- Challenge 5: Smart HMI - WebIQ App -->
+      <div class="challenge webiq" id="webiq">
+        <h2>5. HMI WebIQ App Challenge</h2>
+        <p>Complete the tasks for the HMI WebIQ App challenge:</p>
+        <!-- Download the exercise PDF Button -->
+        <a
+          href="{{ url_for('download', challenge='WEBIQ') }}"
+          download="WEBIQ_Challenge_1.pdf"
+          >Download exercise 1
+        </a>
+        <a
+          href="{{ url_for('download', challenge='WEBIQ') }}"
+          download="WEBIQ_Challenge_2.pdf"
+          >Download exercise 2</a
+        >
+        <a
+          href="{{ url_for('download', challenge='WEBIQ') }}"
+          download="WEBIQ_Challenge_3.pdf"
+          >Download exercise 3</a
+        ><br /><br />
+        <!-- "Complete" Button -->
+        <div class="mb-3">
+          <form method="post" action="{{ url_for('complete_task_webiq') }}">
+            <button type="submit" class="btn btn-info btn-block btn-large">
+              Task Completed
+            </button>
+          </form>
+        </div>
+      </div>
+      <br /><br />
+
+      <!-- Challenge 6: IDE App -->
+      <div class="challenge ide" id="ide">
+        <h2>6. IDE App Challenge</h2>
+        <p>Complete the tasks for the IDE App challenge:</p>
+        <!-- Download the exercise PDF Button -->
+        <a
+          href="{{ url_for('download', challenge='IDE') }}"
+          download="IDE_Challenge_1.pdf"
+          >Download exercise 1</a
+        >
+        <a
+          href="{{ url_for('download', challenge='IDE') }}"
+          download="IDE_Challenge_2.pdf"
+          >Download exercise 2</a
+        >
+        <a
+          href="{{ url_for('download', challenge='IDE') }}"
+          download="IDE_Challenge_3.pdf"
+          >Download exercise 3</a
+        ><br /><br />
+        <!-- "Complete" Button -->
+        <div class="mb-3">
+          <form method="post" action="{{ url_for('complete_task_ide') }}">
+            <button type="submit" class="btn btn-info btn-block btn-large">
+              Task Completed
+            </button>
+          </form>
+        </div>
+      </div>
+      <br /><br />
+    </div>
+  </div>
+</div>
+{% endblock %}
