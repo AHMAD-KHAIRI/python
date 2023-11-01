@@ -1,3 +1,5 @@
+import os
+from dotenv import load_dotenv
 from datetime import date
 from flask import Flask, abort, render_template, redirect, url_for, flash
 from flask_bootstrap import Bootstrap5
@@ -13,10 +15,12 @@ from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 
 # Initialize Flask app
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config["SECRET_KEY"] = os.environ.get("FLASK_KEY")
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 Gravatar(app, size=100, rating='g', default='retro', force_default=False, force_lower=False, use_ssl=False, base_url=None)
+# load python environment variable
+load_dotenv()
 
 # Configure Flask-Login
 login_manager = LoginManager()
@@ -40,7 +44,10 @@ def admin_only(function):
     return decorated_function
 
 # CONNECT TO DB (MySQL)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://ctrlxCore:password@127.0.0.1/blog'
+MYSQL_USERNAME = os.environ.get("MYSQL_USERNAME")
+MYSQL_PASSWORD = os.environ.get("MYSQL_PASSWORD")
+MYSQL_DATABASE = os.environ.get("MYSQL_DATABASE")
+app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{MYSQL_USERNAME}:{MYSQL_PASSWORD}@127.0.0.1/{MYSQL_DATABASE}'
 
 # CONNECT TO DB (SQLite)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
@@ -265,4 +272,4 @@ def contact():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5003)
+    app.run(debug=False, port=5003)

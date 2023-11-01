@@ -13,8 +13,11 @@ from forms import RegistrationForm, LoginForm
 
 # Initialize Flask app
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "some secret string"
+app.config["SECRET_KEY"] = os.environ.get("FLASK_KEY")
 Bootstrap5(app)
+
+# load python environment variable
+load_dotenv()
 
 # Configure Flask-Login
 login_manager = LoginManager()
@@ -27,7 +30,10 @@ def load_user(user_id):
     return db.session.execute(db.select(User).where(User.id == user_id)).scalar()
 
 # configure the database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://ctrlxCore:password@127.0.0.1/ctrlxdevelopr'
+MYSQL_USERNAME = os.environ.get("MYSQL_USERNAME")
+MYSQL_PASSWORD = os.environ.get("MYSQL_PASSWORD")
+MYSQL_DATABASE = os.environ.get("MYSQL_DATABASE")
+app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{MYSQL_USERNAME}:{MYSQL_PASSWORD}@127.0.0.1/{MYSQL_DATABASE}'
 
 # initialize the app with the extension
 db.init_app(app)
