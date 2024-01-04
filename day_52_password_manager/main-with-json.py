@@ -164,7 +164,7 @@ add_button.grid(row=4, column=1, columnspan=2)
 website_input.focus()
 
 # pre-insert a string to the email entry field
-email_or_username_input.insert(0, "ak.test.smtp.python@gmail.com")
+email_or_username_input.insert(0, "testmail@gmail.com")
 
 # keep the window open
 window.mainloop()
