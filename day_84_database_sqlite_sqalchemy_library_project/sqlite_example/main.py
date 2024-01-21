@@ -12,7 +12,7 @@
 
 # # insert data into the table 
 # # NOTE: the create a table code above must be commented out before we insert data into the table
-# cursor.execute("INSERT INTO books VALUES(1, 'Harry Potter', 'J. K. Rowling', '9.3')")
+# cursor.execute("INSERT INTO books VALUES(2, 'ELon Musk', 'Ashlee Vance', '9.5')")
 # db.commit()
 
 
