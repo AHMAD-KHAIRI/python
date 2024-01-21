@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block styles %}
+    <!-- Load Bootstrap 5 CSS and your custom CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../static/css/styles.css" />
+    <link rel="icon" href="../static/assets/img/favicon.ico" />
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <!-- Page Header-->
+    <main>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <!-- Navbar content -->
+        <div class="container">
+            <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+          <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="h5 navbar-nav ms-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link {{ 'active' if request.endpoint == 'home' }}"
+                  href="{{ url_for('home') }}"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link {{ 'active' if request.endpoint == 'about' }}"
+                  href="{{ url_for('about') }}"
+                  >About</a
+                >
+              </li>
+            </ul>
+        </div>
+      </nav>
+          <header
+      class="masthead"
+      style="background-image: url('./static/assets/img/title-soccer-ball-on-grass-in-corner.jpg')"
+    >
+      <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="site-heading">
+              <h1 class="text-white"><strong>Top 11 Football Stadiums in the world.</strong></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    </main>
+    {% block content %}{% endblock %}
+    <div class="container footer mt-4">
+      <div class="text-white row">
+        <div class="col-auto">
+          <p class="h6">
+            <span>©</span>
+            Hafizi, 2024, all rights reserved
+          </p>
+        </div>
+      </div>
+    </div>
+    {% block scripts %}
+    <!-- Add Bootstrap 5 JavaScript and your custom scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    {% endblock %}
+  </body>
+</html>
