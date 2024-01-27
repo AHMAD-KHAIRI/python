@@ -20,7 +20,7 @@ AV_API_KEY = os.environ.get("AV_API_KEY")
 NEWS_API_KEY = os.environ.get("NEWS_API_KEY")
 
 stock_parameters = {
-    "function":"TIME_SERIES_DAILY_ADJUSTED",
+    "function":"TIME_SERIES_DAILY",
     "symbol":STOCK_NAME,
     "interval":"5min",
     "apikey": AV_API_KEY
@@ -28,7 +28,7 @@ stock_parameters = {
 
 news_parameters = {
     "q": COMPANY_NAME,
-    "from":"2023",
+    "from":"2024",
     "apiKey": NEWS_API_KEY
     }
 
